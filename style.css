@@ -193,10 +193,12 @@ ul.main-menu__list {
 
 .block--elem2__bg-img {
     height: 100%;
+    width: 100%;
     background-image: url(images/just-relax.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: .4;
+    position: absolute;
 }
 
 .block--elem2__content {
@@ -782,6 +784,10 @@ ul.top-footer__list3 h3:hover {
 
 @media screen and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
+    body {
+        overflow-x: hidden;
+    }
+    
     .block--elem1__list--item {
         flex: 1;
     }
