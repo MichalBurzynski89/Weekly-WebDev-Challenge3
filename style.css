@@ -1059,6 +1059,7 @@ ul.top-footer__list3 h3:hover {
 
     .main-banner img {
         width: auto;
+        overflow: hidden;
     }
 
     .main-banner__container h1 {
@@ -1215,11 +1216,11 @@ ul.top-footer__list3 h3:hover {
     }
 
     .footer {
-        height: 58rem;
+        height: 60rem;
     }
 
     .top-footer {
-        height: 51rem;
+        height: 53rem;
         flex-flow: column;
         justify-content: center;
         align-items: center;
