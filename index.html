@@ -24,6 +24,10 @@
                 <li class="main-menu__list main-menu__list--item"><a href="#" class="main-menu__list main-menu__list--link">Contact</a></li>
             </ul>
         </nav>
+        
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
 
         <div class="main-banner">
             <img src="images/main-banner.jpg" alt="main banner">
@@ -200,6 +204,14 @@
             </div>
         </footer>
     </main>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('open');
+            document.querySelector('.main-menu__list').classList.toggle('open');
+        });
+
+    </script>
 </body>
 
 </html>
