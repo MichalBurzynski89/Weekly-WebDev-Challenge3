@@ -1235,7 +1235,7 @@ ul.top-footer__list3 h3:hover {
     }
 
     ul.top-footer__list1 {
-        background-position: 0 72.5%;
+        background-position: 0 52.5%;
     }
 
     .top-footer__list1--item,
@@ -1249,7 +1249,7 @@ ul.top-footer__list3 h3:hover {
     .bottom-footer__container--facebook,
     .bottom-footer__container--pinterest,
     .bottom-footer__container--google {
-        width: 7w;
+        width: 7vw;
         height: 7vw;
         margin-right: .5vw;
         background-size: 3.5vw;
