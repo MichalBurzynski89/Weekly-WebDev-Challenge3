@@ -17,15 +17,20 @@ body {
 
 header {
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .main-menu {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
     height: 8rem;
     background: url(images/logo.png) no-repeat 13.65%;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    border-bottom: 1px solid #929292;
 }
 
 ul.main-menu__list {
@@ -50,7 +55,8 @@ ul.main-menu__list {
 }
 
 .menu-toggle {
-    position: absolute;
+    position: fixed;
+    z-index: 2;
     right: 5rem;
     top: 2rem;
     padding: 1.5rem 1rem;
@@ -99,6 +105,7 @@ ul.main-menu__list {
 .main-banner {
     background: #000;
     position: relative;
+    margin-top: 8rem;
 }
 
 .main-banner img {
@@ -1016,6 +1023,10 @@ ul.top-footer__list3 h3:hover {
 
     body {
         overflow-x: hidden;
+    }
+    
+    .main-menu {
+        border: none;
     }
 
     ul.main-menu__list {
