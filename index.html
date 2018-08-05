@@ -14,14 +14,14 @@
 </head>
 
 <body>
-    <header>
+    <header id="home">
         <nav class="main-menu">
             <ul class="main-menu__list">
-                <li class="main-menu__list main-menu__list--item"><a href="#" class="main-menu__list main-menu__list--link">Home</a></li>
-                <li class="main-menu__list main-menu__list--item"><a href="#" class="main-menu__list main-menu__list--link">About</a></li>
-                <li class="main-menu__list main-menu__list--item"><a href="#" class="main-menu__list main-menu__list--link">Blog</a></li>
-                <li class="main-menu__list main-menu__list--item"><a href="#" class="main-menu__list main-menu__list--link">Portfolio</a></li>
-                <li class="main-menu__list main-menu__list--item"><a href="#" class="main-menu__list main-menu__list--link">Contact</a></li>
+                <li class="main-menu__list main-menu__list--item"><a href="#home" class="main-menu__list main-menu__list--link">Home</a></li>
+                <li class="main-menu__list main-menu__list--item"><a href="#about" class="main-menu__list main-menu__list--link">About</a></li>
+                <li class="main-menu__list main-menu__list--item"><a href="#blog" class="main-menu__list main-menu__list--link">Blog</a></li>
+                <li class="main-menu__list main-menu__list--item"><a href="#portfolio" class="main-menu__list main-menu__list--link">Portfolio</a></li>
+                <li class="main-menu__list main-menu__list--item"><a href="#contact" class="main-menu__list main-menu__list--link">Contact</a></li>
             </ul>
         </nav>
         
@@ -40,7 +40,7 @@
     </header>
 
     <main class="wrapper">
-        <section class="block block--elem1">
+        <section class="block block--elem1" id="about">
             <div class="block--elem1__header">
                 <h2>Professional Services</h2>
                 <p>Proin iaculis purus consequat sem cure</p>
@@ -62,7 +62,7 @@
             </ul>
         </section>
 
-        <section class="block block--elem2">
+        <section class="block block--elem2" id="blog">
             <div class="block--elem2__gear"></div>
             <div class="block--elem2__container">
                 <div class="block--elem2__bg-img"></div>
@@ -81,7 +81,7 @@
             </div>
         </section>
 
-        <section class="block block--elem3">
+        <section class="block block--elem3" id="portfolio">
             <div class="block--elem3__header">
                 <h2>Latest Project</h2>
                 <p>Proin iaculis purus consequat sem cure</p>
@@ -163,7 +163,7 @@
             <div class="block--elem6__logos"></div>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" id="contact">
             <div class="top-footer">
                 <ul class="top-footer__list1">
                     <h3>Contact Us</h3>
@@ -205,12 +205,41 @@
         </footer>
     </main>
     
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             this.classList.toggle('open');
             document.querySelector('.main-menu__list').classList.toggle('open');
         });
 
+        /* document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }); */
+        var $root = $('html, body');
+
+        $('a[href^="#"]').click(function(e) {
+            e.preventDefault();
+
+            $('.menu-toggle.open').removeClass('open');
+            $('.main-menu__list.open').removeClass('open');
+
+            var href = $.attr(this, 'href');
+
+            $root.animate({
+                scrollTop: $(href).offset().top - 200
+            }, 750);
+
+            window.location.hash = href;
+
+            return false;
+        });
+        
     </script>
 </body>
 
